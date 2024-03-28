@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Customer Record:</h1><br>
+    <div class="card border-dark ">
+        <h4 class="card-header border-dark text-uppercase">
+           <strong>{{crecord.first_name.capitalize}} {{crecord.last_name.capitalize}}</strong>
+        </h4>
+        <div class="card-body">
+            <p class="card-text">
+                <strong>Email :</strong> {{crecord.email}} <br>
+            </p>
+            <p class="card-text">
+                <strong>Phone :</strong> {{crecord.phone}} <br>
+            </p>
+            <p class="card-text">
+                <strong>Address :</strong> {{crecord.address}} <br>
+            </p>
+            <p class="card-text">
+                <strong>City :</strong> {{crecord.city}} <br>
+            </p>
+            <p class="card-text">
+                <strong>State :</strong> {{crecord.state}} <br>
+            </p>
+            <p class="card-text">
+                <strong>ZipCode :</strong> {{crecord.zip}} <br>
+            </p>
+            <p class="card-text">
+                <strong>Created At :</strong> {{crecord.created_at}} <br>
+            </p>
+            <p class="card-text">
+                <strong>ID :</strong> {{crecord.id}} <br>
+            </p>
+            
+        </div>
+    </div></br>
+    <a href="{% url 'home' %}" class="btn btn-outline-primary">Go back</a>
+    <a href="{% url 'delete_record' crecord.id %}" class="btn btn-outline-danger">Delete</a>
+    <a href="{% url 'update_record' crecord.id %}" class="btn btn-outline-secondary">Update</a>
+    
+
+
+
+
+ 
+{% endblock %}
